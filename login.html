@@ -557,32 +557,35 @@
      data-shape="rectangular"
      data-logo_alignment="left">
 </div>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+   <script src="https://accounts.google.com/gsi/client" async defer></script>
 
 <script>
 function handleCredentialResponse(response) {
-    console.log("Google Login Successful");
-    console.log(response.credential);
 
-    // Decode Google user information
-    const data = JSON.parse(
-        atob(response.credential.split('.')[1]
-            .replace(/-/g, '+')
-            .replace(/_/g, '/'))
+    const payload = response.credential.split(".")[1];
+
+    const decoded = JSON.parse(
+        atob(
+            payload
+                .replace(/-/g, "+")
+                .replace(/_/g, "/")
+        )
     );
 
-    console.log("Name:", data.name);
-    console.log("Email:", data.email);
+    localStorage.setItem(
+        "googleUser",
+        JSON.stringify({
+            name: decoded.name,
+            email: decoded.email,
+            picture: decoded.picture
+        })
+    );
 
-    // Store login information
-    localStorage.setItem("googleUser", JSON.stringify({
-        name: data.name,
-        email: data.email,
-        picture: data.picture
-    }));
+    localStorage.setItem("isLoggedIn", "true");
 
-    // Go to your home page
-    window.location.href = "main.html";
+    alert("Google Login successful! Welcome " + decoded.name);
+
+    window.location.href = "courses.html";
 }
 </script>
 
