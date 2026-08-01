@@ -189,10 +189,7 @@ function handleCredentialResponse(response) {
 
     window.location.href = "index.html";
 }
-function handleCredentialResponse(response) {
-    console.log("Google login successful");
-    console.log(response.credential);
-}
+
 
 
 function parseJwt(token) {
