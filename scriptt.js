@@ -173,23 +173,24 @@ function handleCredentialResponse(response) {
     const payload = response.credential.split(".")[1];
 
     const decoded = JSON.parse(
-        atob(
-            payload
-                .replace(/-/g, "+")
-                .replace(/_/g, "/")
-        )
+        atob(payload.replace(/-/g, "+").replace(/_/g, "/"))
     );
 
-    console.log("Google Login Successful!");
-    console.log("Name:", decoded.name);
-    console.log("Email:", decoded.email);
+    localStorage.setItem(
+        "googleUser",
+        JSON.stringify({
+            name: decoded.name,
+            email: decoded.email,
+            picture: decoded.picture
+        })
+    );
 
-    localStorage.setItem("userName", decoded.name);
-    localStorage.setItem("userEmail", decoded.email);
+    localStorage.setItem("isLoggedIn", "true");
 
-    window.location.href = "index.html";
+    alert("Google Login successful! Welcome " + decoded.name);
+
+    window.location.href = "courses.html";
 }
-
 
 
 function parseJwt(token) {
