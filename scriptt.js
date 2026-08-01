@@ -1,22 +1,10 @@
-/* =========================================
-   CORIZO LEARN - MAIN JAVASCRIPT
-========================================= */
 
-
-/* =========================================
-   1. WELCOME MESSAGE
-========================================= */
 
 function showMessage() {
 
     alert("Welcome to Corizo E-Commerce Portal");
 
 }
-
-
-/* =========================================
-   2. REGISTER USER
-========================================= */
 
 function registerUser() {
 
@@ -180,6 +168,27 @@ function handleGoogleLogin(response) {
 
     window.location.href = "courses.html";
 }
+function handleCredentialResponse(response) {
+
+    const payload = response.credential.split(".")[1];
+
+    const decoded = JSON.parse(
+        atob(
+            payload
+                .replace(/-/g, "+")
+                .replace(/_/g, "/")
+        )
+    );
+
+    console.log("Google Login Successful!");
+    console.log("Name:", decoded.name);
+    console.log("Email:", decoded.email);
+
+    localStorage.setItem("userName", decoded.name);
+    localStorage.setItem("userEmail", decoded.email);
+
+    window.location.href = "index.html";
+}
 
 
 function parseJwt(token) {
@@ -205,10 +214,6 @@ function parseJwt(token) {
 }
 
 
-/* =========================================
-   4. SELECT COURSE
-========================================= */
-
 function selectCourse(
     courseName,
     coursePrice
@@ -232,9 +237,6 @@ function selectCourse(
 }
 
 
-/* =========================================
-   5. ADD COURSE TO CART
-========================================= */
 
 function addToCart(
     courseName,
@@ -270,9 +272,7 @@ function addToCart(
 }
 
 
-/* =========================================
-   6. LOAD PRODUCT DETAILS
-========================================= */
+
 
 function loadProduct() {
 
@@ -325,10 +325,6 @@ function loadProduct() {
 }
 
 
-/* =========================================
-   7. LOAD CART
-========================================= */
-
 function loadCart() {
 
     let cart =
@@ -377,10 +373,6 @@ function loadCart() {
 
 }
 
-
-/* =========================================
-   PLACE ORDER
-========================================= */
 
 function placeOrder() {
 
@@ -727,10 +719,6 @@ function logoutUser() {
 }
 
 
-/* =========================================
-   11. ADMIN QUICK ACTIONS
-========================================= */
-
 function addCourse() {
 
     alert(
@@ -777,9 +765,6 @@ function viewReports() {
 }
 
 
-/* =========================================
-   12. RUN FUNCTIONS WHEN PAGE LOADS
-========================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
