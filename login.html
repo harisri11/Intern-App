@@ -461,15 +461,22 @@
 
                         <!-- Google Login -->
 
-                        <button
-    type="button"
-    class="social-btn"
-    onclick="googleLogin()">
+                      <script src="script.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+                        <div id="g_id_onload"
+     data-client_id="1023395881512-c6q5dlll6gstc1a37du113uqrk8s1oio.apps.googleusercontent.com"
+     data-callback="handleCredentialResponse"
+     data-auto_prompt="false">
+</div>
 
-    <i class="fa-brands fa-google"></i>
-
-    Continue with Google
-</button>
+<div class="g_id_signin"
+     data-type="standard"
+     data-size="large"
+     data-theme="outline"
+     data-text="continue_with"
+     data-shape="rectangular"
+     data-logo_alignment="left">
+</div>
                         <!-- Register -->
 
                         <p class="login-link">
@@ -524,23 +531,6 @@
 
 </footer>
 
-<script src="scriptt.js"></script>
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-
-<div id="g_id_onload"
-     data-client_id="1023395881512-c6q5dlll6gstc1a37du113uqrk8s1oio.apps.googleusercontent.com"
-     data-callback="handleCredentialResponse"
-     data-auto_prompt="false">
-</div>
-
-<div class="g_id_signin"
-     data-type="standard"
-     data-size="large"
-     data-theme="outline"
-     data-text="continue_with"
-     data-shape="rectangular"
-     data-logo_alignment="left">
-</div>
 function handleCredentialResponse(response) {
 
     const payload = response.credential.split(".")[1];
