@@ -541,18 +541,11 @@
 
 </footer>
 
-
-
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
-
 <script src="scriptt.js"></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-
 <div id="g_id_onload"
      data-client_id="1023395881512-c6q5dlll6gstc1a37du113uqrk8s1oio.apps.googleusercontent.com"
-     data-callback="handleGoogleLogin">
+     data-callback="handleCredentialResponse">
 </div>
 
 <div class="g_id_signin"
@@ -563,6 +556,34 @@
      data-shape="rectangular"
      data-logo_alignment="left">
 </div>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<script>
+function handleCredentialResponse(response) {
+    console.log("Google Login Successful");
+    console.log(response.credential);
+
+    // Decode Google user information
+    const data = JSON.parse(
+        atob(response.credential.split('.')[1]
+            .replace(/-/g, '+')
+            .replace(/_/g, '/'))
+    );
+
+    console.log("Name:", data.name);
+    console.log("Email:", data.email);
+
+    // Store login information
+    localStorage.setItem("googleUser", JSON.stringify({
+        name: data.name,
+        email: data.email,
+        picture: data.picture
+    }));
+
+    // Go to your home page
+    window.location.href = "main.html";
+}
+</script>
 
 
 </body>
