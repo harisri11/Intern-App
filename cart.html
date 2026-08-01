@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Cart | CorizoLearn</title>
+
+
+    <!-- Bootstrap -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- Google Font -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="data.css">
+
+</head>
+
+
+<body class="cart-page">
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<nav class="navbar navbar-expand-lg cart-navbar">
+
+    <div class="container">
+
+
+        <!-- Logo -->
+
+        <a
+            class="navbar-brand brand-logo"
+            href="main.html">
+
+
+            <span class="brand-icon">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </span>
+
+
+            <span>
+
+                Corizo<span class="brand-highlight">
+                    Learn
+                </span>
+
+            </span>
+
+
+        </a>
+
+
+
+        <!-- Mobile Button -->
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+
+        <!-- Navbar -->
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarContent">
+
+
+            <ul class="navbar-nav mx-auto">
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="main.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="courses.html">
+
+                        Courses
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link active"
+                        href="cart.html">
+
+                        Cart
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="orders.html">
+
+                        My Orders
+
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+
+
+            <div class="navbar-actions">
+
+
+                <a
+                    href="cart.html"
+                    class="cart-button">
+
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    Cart
+
+
+                    <span
+                        class="cart-count"
+                        id="cartCount">
+
+                        1
+
+                    </span>
+
+
+                </a>
+
+
+                <a
+                    href="login.html"
+                    class="nav-login">
+
+                    Login
+
+                </a>
+
+
+                <a
+                    href="register.html"
+                    class="nav-register">
+
+                    Register
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================================
+     PAGE HEADER
+========================================= -->
+
+<section class="cart-header">
+
+
+    <div class="container">
+
+
+        <div class="cart-breadcrumb">
+
+
+            <a href="main.html">
+
+                Home
+
+            </a>
+
+
+            <i class="fa-solid fa-angle-right"></i>
+
+
+            <span>
+
+                My Cart
+
+            </span>
+
+
+        </div>
+
+
+        <h1>
+
+            My Shopping Cart
+
+        </h1>
+
+
+        <p>
+
+            Review your selected courses before checkout.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     CART CONTENT
+========================================= -->
+
+<section class="cart-section">
+
+
+    <div class="container">
+
+
+        <div class="row g-5">
+
+
+            <!-- =================================
+                 CART ITEMS
+            ================================= -->
+
+            <div class="col-lg-8">
+
+
+                <div class="cart-items-card">
+
+
+                    <!-- Cart Header -->
+
+                    <div class="cart-title-row">
+
+
+                        <div>
+
+                            <h2>
+
+                                Your Cart
+
+                            </h2>
+
+
+                            <p>
+
+                                <span id="itemCount">
+                                    1
+                                </span>
+
+                                Course Selected
+
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            href="courses.html"
+                            class="continue-link">
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                            Continue Shopping
+
+                        </a>
+
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         CART ITEM
+                    ================================= -->
+
+                    <div
+                        class="cart-item"
+                        id="cartItem">
+
+
+                        <!-- Image -->
+
+                        <div class="cart-course-image">
+
+
+                            <img
+                                src="https://t4.ftcdn.net/jpg/02/83/46/33/240_F_283463385_mfnrx6RPU3BqObhVuVjYZjeZ5pegE7xq.jpg"
+                                alt="Web Development">
+
+
+                        </div>
+
+
+
+                        <!-- Details -->
+
+                        <div class="cart-course-details">
+
+
+                            <span class="cart-course-category">
+
+                                WEB DEVELOPMENT
+
+                            </span>
+
+
+                            <h3>
+
+                                Full Stack Web
+                                Development Internship
+
+                            </h3>
+
+
+                            <p>
+
+                                Learn HTML, CSS, JavaScript,
+                                Bootstrap, React and modern
+                                web development.
+
+                            </p>
+
+
+                            <div class="cart-course-info">
+
+
+                                <span>
+
+                                    <i class="fa-regular fa-clock"></i>
+
+                                    2+1 Months
+
+                                </span>
+
+
+                                <span>
+
+                                    <i class="fa-solid fa-certificate"></i>
+
+                                    Certificate
+
+                                </span>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- Price -->
+
+                        <div class="cart-price-section">
+
+
+                            <strong>
+
+                                ₹4,999
+
+                            </strong>
+
+
+                            <del>
+
+                                ₹7,999
+
+                            </del>
+
+
+                            <button
+                                class="remove-btn"
+                                onclick="removeItem()">
+
+
+                                <i class="fa-solid fa-trash"></i>
+
+                                Remove
+
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- Coupon -->
+
+                    <div class="coupon-section">
+
+
+                        <div class="coupon-title">
+
+
+                            <i class="fa-solid fa-tag"></i>
+
+
+                            Have a coupon?
+
+
+                        </div>
+
+
+                        <div class="coupon-form">
+
+
+                            <input
+                                type="text"
+                                id="couponCode"
+                                placeholder="Enter coupon code">
+
+
+                            <button
+                                onclick="applyCoupon()">
+
+                                Apply
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <p
+                        id="couponMessage"
+                        class="coupon-message">
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 ORDER SUMMARY
+            ================================= -->
+
+            <div class="col-lg-4">
+
+
+                <div class="order-summary">
+
+
+                    <h2>
+
+                        Order Summary
+
+                    </h2>
+
+
+
+                    <div class="summary-row">
+
+
+                        <span>
+
+                            Course Price
+
+                        </span>
+
+
+                        <span>
+
+                            ₹4,999
+
+                        </span>
+
+
+                    </div>
+
+
+
+                    <div class="summary-row">
+
+
+                        <span>
+
+                            Original Price
+
+                        </span>
+
+
+                        <span class="text-muted">
+
+                            <del>
+                                ₹7,999
+                            </del>
+
+                        </span>
+
+
+                    </div>
+
+
+
+                    <div class="summary-row discount-row">
+
+
+                        <span>
+
+                            Discount
+
+                        </span>
+
+
+                        <span>
+
+                            -₹3,000
+
+                        </span>
+
+
+                    </div>
+
+
+
+                    <hr>
+
+
+
+                    <div class="summary-total">
+
+
+                        <span>
+
+                            Total
+
+                        </span>
+
+
+                        <strong>
+
+                            ₹4,999
+
+                        </strong>
+
+
+                    </div>
+
+
+
+                    <!-- Checkout -->
+
+                    <a
+                        href="checkout.html"
+                        class="checkout-btn">
+
+
+                        Proceed to Checkout
+
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+
+                    </a>
+
+
+
+                    <!-- Secure -->
+
+                    <div class="secure-checkout">
+
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+
+                        <div>
+
+
+                            <strong>
+
+                                Secure Checkout
+
+                            </strong>
+
+
+                            <p>
+
+                                Your information is
+                                protected and secure.
+
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- Payment -->
+
+                    <div class="payment-methods">
+
+
+                        <p>
+
+                            We Accept
+
+                        </p>
+
+
+                        <div>
+
+
+                            <i class="fa-brands fa-cc-visa"></i>
+
+                            <i class="fa-brands fa-cc-mastercard"></i>
+
+                            <i class="fa-brands fa-google-pay"></i>
+
+                            <i class="fa-solid fa-credit-card"></i>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     BENEFITS
+========================================= -->
+
+<section class="cart-benefits">
+
+
+    <div class="container">
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+
+                <div class="benefit-box">
+
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+
+                    <div>
+
+
+                        <h4>
+
+                            Secure Payment
+
+                        </h4>
+
+
+                        <p>
+
+                            Safe and secure payment process.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="col-md-4">
+
+
+                <div class="benefit-box">
+
+
+                    <i class="fa-solid fa-headset"></i>
+
+
+                    <div>
+
+
+                        <h4>
+
+                            Expert Support
+
+                        </h4>
+
+
+                        <p>
+
+                            Get support throughout your learning journey.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="col-md-4">
+
+
+                <div class="benefit-box">
+
+
+                    <i class="fa-solid fa-certificate"></i>
+
+
+                    <div>
+
+
+                        <h4>
+
+                            Certified Learning
+
+                        </h4>
+
+
+                        <p>
+
+                            Receive certification after completion.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="auth-footer">
+
+
+    <p>
+
+        © 2026 CorizoLearn.
+        All Rights Reserved.
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- Bootstrap -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/* =========================================
+   REMOVE CART ITEM
+========================================= */
+
+function removeItem() {
+
+
+    let item =
+        document.getElementById("cartItem");
+
+
+    item.style.display =
+        "none";
+
+
+    document.getElementById("itemCount")
+        .innerText = "0";
+
+
+    document.getElementById("cartCount")
+        .innerText = "0";
+
+
+    alert(
+        "Course removed from your cart."
+    );
+
+
+}
+
+
+
+/* =========================================
+   APPLY COUPON
+========================================= */
+
+function applyCoupon() {
+
+
+    let coupon =
+        document.getElementById("couponCode")
+        .value
+        .toUpperCase();
+
+
+    let message =
+        document.getElementById("couponMessage");
+
+
+    if (coupon === "IBM@30") {
+
+
+        message.innerText =
+            "Coupon applied successfully!";
+
+
+        message.style.color =
+            "#16a34a";
+
+
+    } else {
+
+
+        message.innerText =
+            "Invalid coupon code.";
+
+
+        message.style.color =
+            "#dc2626";
+
+
+    }
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders | CorizoLearn</title>
+
+
+    <!-- Bootstrap -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- Google Font -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="data.css">
+
+</head>
+
+
+<body class="orders-page">
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<nav class="navbar navbar-expand-lg orders-navbar">
+
+    <div class="container">
+
+
+        <!-- Logo -->
+
+        <a
+            class="navbar-brand brand-logo"
+            href="main.html">
+
+
+            <span class="brand-icon">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </span>
+
+
+            Corizo<span class="brand-highlight">
+                Learn
+            </span>
+
+
+        </a>
+
+
+
+        <!-- Mobile Button -->
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+
+        <!-- Navigation -->
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarContent">
+
+
+            <ul class="navbar-nav mx-auto">
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="main.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="courses.html">
+
+                        Courses
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="cart.html">
+
+                        Cart
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link active"
+                        href="orders.html">
+
+                        My Orders
+
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+
+
+            <div class="navbar-actions">
+
+
+                <a
+                    href="cart.html"
+                    class="cart-button">
+
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    Cart
+
+
+                </a>
+
+
+                <a
+                    href="login.html"
+                    class="nav-login">
+
+                    Login
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================================
+     PAGE HEADER
+========================================= -->
+
+<section class="orders-header">
+
+
+    <div class="container">
+
+
+        <div class="orders-breadcrumb">
+
+
+            <a href="main.html">
+
+                Home
+
+            </a>
+
+
+            <i class="fa-solid fa-angle-right"></i>
+
+
+            <span>
+
+                My Orders
+
+            </span>
+
+
+        </div>
+
+
+        <h1>
+
+            My Orders
+
+        </h1>
+
+
+        <p>
+
+            Track and manage your enrolled courses
+            and internship programs.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     ORDER CONTENT
+========================================= -->
+
+<section class="orders-section">
+
+
+    <div class="container">
+
+
+        <!-- Success Message -->
+
+        <div class="success-message">
+
+
+            <div class="success-icon">
+
+
+                <i class="fa-solid fa-check"></i>
+
+
+            </div>
+
+
+            <div>
+
+
+                <h3>
+
+                    Enrollment Confirmed!
+
+                </h3>
+
+
+                <p>
+
+                    Congratulations!
+                    Your internship enrollment has
+                    been successfully confirmed.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- Order Title -->
+
+        <div class="orders-title">
+
+
+            <div>
+
+
+                <h2>
+
+                    Your Enrollments
+
+                </h2>
+
+
+                <p>
+
+                    View your purchased courses
+                    and internship details.
+
+                </p>
+
+
+            </div>
+
+
+            <a
+                href="courses.html"
+                class="browse-btn">
+
+
+                <i class="fa-solid fa-plus"></i>
+
+
+                Browse More Courses
+
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             ORDER CARD
+        ================================= -->
+
+        <div class="order-card">
+
+
+            <!-- Order Top -->
+
+            <div class="order-top">
+
+
+                <div>
+
+
+                    <span class="order-label">
+
+                        ORDER ID
+
+                    </span>
+
+
+                    <h4 id="orderId">
+
+                        CRZ-1001
+
+                    </h4>
+
+
+                </div>
+
+
+
+                <div class="order-status">
+
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+
+                    Order Confirmed
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <hr>
+
+
+
+            <!-- Order Details -->
+
+            <div class="row align-items-center g-4">
+
+
+                <!-- Course Image -->
+
+                <div class="col-md-2">
+
+
+                    <img
+                        src="https://t4.ftcdn.net/jpg/02/83/46/33/240_F_283463385_mfnrx6RPU3BqObhVuVjYZjeZ5pegE7xq.jpg"
+                        class="order-course-image"
+                        alt="Web Development">
+
+
+                </div>
+
+
+
+                <!-- Course Details -->
+
+                <div class="col-md-5">
+
+
+                    <span class="course-category">
+
+                        WEB DEVELOPMENT
+
+                    </span>
+
+
+                    <h3 id="courseName">
+
+                        Full Stack Web
+                        Development Internship
+
+                    </h3>
+
+
+                    <p>
+
+                        <i class="fa-regular fa-clock"></i>
+
+                        Duration:
+                        <strong>
+                            2+1 Months
+                        </strong>
+
+                    </p>
+
+
+                    <p>
+
+                        <i class="fa-solid fa-certificate"></i>
+
+                        Certificate Included
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- Price -->
+
+                <div class="col-md-2">
+
+
+                    <span class="price-label">
+
+                        Amount Paid
+
+                    </span>
+
+
+                    <h3 id="coursePrice">
+
+                        ₹4,999
+
+                    </h3>
+
+
+                </div>
+
+
+
+                <!-- Action -->
+
+                <div class="col-md-3">
+
+
+                    <a
+                        href="product.html"
+                        class="view-course-btn">
+
+
+                        View Course
+
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <hr>
+
+
+
+            <!-- Order Bottom -->
+
+            <div class="order-bottom">
+
+
+                <span>
+
+
+                    <i class="fa-regular fa-calendar"></i>
+
+
+                    Order Date:
+
+
+                    <strong id="orderDate">
+
+                        26 July 2026
+
+                    </strong>
+
+
+                </span>
+
+
+
+                <span>
+
+
+                    <i class="fa-solid fa-user"></i>
+
+
+                    Student:
+
+
+                    <strong id="studentName">
+
+                        Student
+
+                    </strong>
+
+
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             LEARNING ACCESS
+        ================================= -->
+
+        <div class="learning-access">
+
+
+            <div class="access-icon">
+
+
+                <i class="fa-solid fa-laptop-code"></i>
+
+
+            </div>
+
+
+            <div>
+
+
+                <h3>
+
+                    Start Your Learning Journey
+
+                </h3>
+
+
+                <p>
+
+                    Access your internship program,
+                    complete hands-on projects and
+                    earn your certificate.
+
+                </p>
+
+
+            </div>
+
+
+            <a
+                href="product.html"
+                class="start-learning-btn">
+
+
+                Start Learning
+
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="auth-footer">
+
+
+    <p>
+
+        © 2026 CorizoLearn.
+        All Rights Reserved.
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- Bootstrap -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/* =========================================
+   GET DATA FROM CHECKOUT
+========================================= */
+
+
+let studentName =
+    localStorage.getItem(
+        "studentName"
+    );
+
+
+let courseName =
+    localStorage.getItem(
+        "courseName"
+    );
+
+
+let coursePrice =
+    localStorage.getItem(
+        "coursePrice"
+    );
+
+
+
+/* =========================================
+   DISPLAY STUDENT NAME
+========================================= */
+
+
+if (
+    studentName
+) {
+
+
+    document.getElementById(
+        "studentName"
+    ).innerText =
+        studentName;
+
+
+}
+
+
+
+/* =========================================
+   DISPLAY COURSE NAME
+========================================= */
+
+
+if (
+    courseName
+) {
+
+
+    document.getElementById(
+        "courseName"
+    ).innerText =
+        courseName;
+
+
+}
+
+
+
+/* =========================================
+   DISPLAY COURSE PRICE
+========================================= */
+
+
+if (
+    coursePrice
+) {
+
+
+    document.getElementById(
+        "coursePrice"
+    ).innerText =
+        coursePrice;
+
+
+}
+
+
+
+/* =========================================
+   GENERATE ORDER ID
+========================================= */
+
+
+let orderNumber =
+    Math.floor(
+        1000 +
+        Math.random() * 9000
+    );
+
+
+document.getElementById(
+    "orderId"
+).innerText =
+    "CRZ-" + orderNumber;
+
+
+
+/* =========================================
+   CURRENT DATE
+========================================= */
+
+
+let today =
+    new Date();
+
+
+let formattedDate =
+    today.toLocaleDateString(
+        "en-IN",
+        {
+            day: "2-digit",
+            month: "long",
+            year: "numeric"
+        }
+    );
+
+
+document.getElementById(
+    "orderDate"
+).innerText =
+    formattedDate;
+
+
+</script>
+
+
+</body>
+
+</html>
