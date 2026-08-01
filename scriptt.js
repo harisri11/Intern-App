@@ -156,6 +156,53 @@ function loginUser() {
     }
 
 }
+function handleGoogleLogin(response) {
+
+    const data = parseJwt(response.credential);
+
+    const googleUser = {
+        name: data.name,
+        email: data.email,
+        picture: data.picture
+    };
+
+    localStorage.setItem(
+        "corizoGoogleUser",
+        JSON.stringify(googleUser)
+    );
+
+    localStorage.setItem(
+        "isLoggedIn",
+        "true"
+    );
+
+    alert("Google Login successful! Welcome " + data.name);
+
+    window.location.href = "courses.html";
+}
+
+
+function parseJwt(token) {
+
+    const base64Url = token.split('.')[1];
+
+    const base64 =
+        base64Url.replace(/-/g, '+').replace(/_/g, '/');
+
+    const jsonPayload =
+        decodeURIComponent(
+            atob(base64)
+                .split('')
+                .map(function(c) {
+                    return '%' +
+                        ('00' + c.charCodeAt(0).toString(16))
+                        .slice(-2);
+                })
+                .join('')
+        );
+
+    return JSON.parse(jsonPayload);
+}
 
 
 /* =========================================
