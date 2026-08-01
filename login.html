@@ -462,23 +462,14 @@
                         <!-- Google Login -->
 
                         <button
-                            type="button"
-                            class="social-btn"
-                            onclick="googleLogin()">
+    type="button"
+    class="social-btn"
+    onclick="googleLogin()">
 
+    <i class="fa-brands fa-google"></i>
 
-                            <i
-                                class="fa-brands fa-google">
-                            </i>
-
-
-                            Continue with Google
-
-
-                        </button>
-
-
-
+    Continue with Google
+</button>
                         <!-- Register -->
 
                         <p class="login-link">
@@ -550,8 +541,6 @@
      data-shape="rectangular"
      data-logo_alignment="left">
 </div>
-
-<script>
 function handleCredentialResponse(response) {
 
     const payload = response.credential.split(".")[1];
