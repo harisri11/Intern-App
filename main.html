@@ -22,8 +22,71 @@
     <link rel="stylesheet" href="data.css">
    
 </head>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<script>
+    window.onload = function () {
+
+        google.accounts.id.initialize({
+            client_id: "YOUR_GOOGLE_CLIENT_ID",
+            callback: handleGoogleLogin
+        });
+
+        google.accounts.id.renderButton(
+            document.getElementById("googleLoginButton"),
+            {
+                theme: "outline",
+                size: "large",
+                width: 350,
+                text: "continue_with",
+                shape: "rectangular"
+            }
+        );
+    };
+
+
+    function handleGoogleLogin(response) {
+
+        // Google returns a credential token
+        const credential = response.credential;
+
+        // Decode Google user information
+        const payload = JSON.parse(
+            atob(
+                credential.split(".")[1]
+                .replace(/-/g, "+")
+                .replace(/_/g, "/")
+            )
+        );
+
+        console.log("Google User:", payload);
+
+        // Save basic user information
+        localStorage.setItem(
+            "googleUser",
+            JSON.stringify({
+                name: payload.name,
+                email: payload.email,
+                picture: payload.picture
+            })
+        );
+
+        localStorage.setItem(
+            "isLoggedIn",
+            "true"
+        );
+
+        alert(
+            "Google Login successful! Welcome " +
+            payload.name
+        );
+
+        window.location.href = "courses.html";
+    }
+</script>
 
 <body>
+    
 
 <!-- ================= NAVBAR ================= -->
 
