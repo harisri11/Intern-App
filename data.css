@@ -5412,3 +5412,30 @@ body {
     }
 
 }
+/* =========================================
+   GOOGLE LOGIN
+========================================= */
+
+.google-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+    color: #777;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.google-divider::before,
+.google-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ddd;
+}
+
+#googleLoginButton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
